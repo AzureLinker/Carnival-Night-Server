@@ -14,7 +14,7 @@ module.exports = function(app){
         }
         if (isFolder(base + path)){ // Если это папка, то вычитать
             let files = fs.readdirSync(base + path).map(item => {
-                const isDir = fs.lstatSync(base+path+'/'+item).isDirectory();
+                const isDir = fs.lstatSync(base+path+'/'+item).isDirectory(); //new comment
                 return{
                     name: item,
                     dir: isDir,
