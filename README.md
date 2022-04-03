@@ -11,6 +11,7 @@
 - [Что такое REST API. Создаем API с нуля на Express - Владилен Минин](https://www.youtube.com/watch?v=lzQIhjElV_g) - вообще по javascript можно смотреть здесь.
 - [Node.js - webDev](https://www.youtube.com/playlist?list=PLNkWIWHIRwMFtsaJ4b_wwkJDHKJeuAkP0) - не только для меня, но и всем рекомендуется к просмотру.
 - [Joltite.js - ttbowen](https://github.com/ttbowen/joltite.js) - пример api для сайта gamejolt.
+- [Better Comments - Aaron Bond](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) - плагин для Visual Studio Code, чтобы комментарии заиграли новыми красками.
 ___
 ### Кто чем занимается:
 - Аверьянов Кирилл - организация сервера и файловой помойки.
