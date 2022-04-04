@@ -9,7 +9,7 @@
 ### Полезные ссылки и рекомендации:
 - [Уроки Git и GitHub - ITDoctor](https://www.youtube.com/playlist?list=PLuY6eeDuleIOMB2R_Kky05ZfiAx2_pbAH) - рекомендую к просмотру.
 - [Что такое REST API. Создаем API с нуля на Express - Владилен Минин](https://www.youtube.com/watch?v=lzQIhjElV_g) - вообще по javascript можно смотреть здесь.
-- [Node.js - webDev](https://www.youtube.com/playlist?list=PLNkWIWHIRwMFtsaJ4b_wwkJDHKJeuAkP0) - не только для меня, но и всем рекомендуется к просмотру.
+- [Node.js - webDev](https://www.youtube.com/playlist?list=PLNkWIWHIRwMFtsaJ4b_wwkJDHKJeuAkP0) - не только для меня, но и всем рекомендуется к просмотру. Файлы будут передаваться и сжиматься при помощи потоков и буферов.
 - [Joltite.js - ttbowen](https://github.com/ttbowen/joltite.js) - пример api для сайта gamejolt.
 - [Better Comments - Aaron Bond](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) - плагин для Visual Studio Code, чтобы комментарии заиграли новыми красками.
 ___
