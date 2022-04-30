@@ -4,7 +4,7 @@ const pool = new Poll({
     password: "root",
     host: "localhost",
     port: "5432",
-    database: "Prometry"
+    database: "Promitey"
 })
 
 module.exports = pool
