@@ -4,12 +4,11 @@ class UserController {
     async createUser (req, res) {
         const {name, surname} = req.body
         const newPerson = await db.query( `INSERT INTO User (ThePathToTheAvatar,Nikname) values ($1, $2) RETURNING *` [ThePathToTheAvatar,Nikname])
-
         res.json (newPerson.rows[0])
     }
     async getUsers(req, res) {
         const user = await db.query(`SELECT * FROM User`)
-        res.json(user)
+        res.json(user.rows)
     }
     async getOneUser (req, res) {
         const id = req.params.id
