@@ -10,7 +10,7 @@ class CommentsController {
         const comments = await db.query('SELECT * FROM Comments')
         res.json(comments.rows)
     }
-    async getOneComments (req, res) {
+    async getOneComment (req, res) {
         const id = req.params.id
         const comments = await db.query('SELECT * FROM Comments where idComments = $1', [idComments])
         res.json(comments.ress[0])
