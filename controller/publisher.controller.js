@@ -11,7 +11,7 @@ class PublisherController {
         res.json(publisher.rows)
     }
     async getOnePublishers (req, res) {
-        const id = req.params.id
+        const idPublisher = req.params.id
         const publisher = await db.query('SELECT * FROM Publisher where idPublisher = $1', [idPublisher])
         res.json(publisher.ress[0])
     }
@@ -21,7 +21,7 @@ class PublisherController {
         res.json(publisher.rows[0])
     }
     async deletePublisher (req, res) {
-        const id = req.params.id
+        const idPublisher = req.params.id
         const publisher = await db.query('DELETE FROM Publisher where idPublisher = $1', [idPublisher])
         res.json(publisher.ress[0])
     }
