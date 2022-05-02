@@ -11,7 +11,7 @@ class CommentsController {
         res.json(comments.rows)
     }
     async getOneComment (req, res) {
-        const id = req.params.id
+        const idComments = req.params.id
         const comments = await db.query('SELECT * FROM Comments where idComments = $1', [idComments])
         res.json(comments.ress[0])
     }
@@ -21,7 +21,7 @@ class CommentsController {
         res.json(comments.rows[0])
     }
     async deleteComments (req, res) {
-        const id = req.params.id
+        const idComments = req.params.id
         const comments = await db.query('DELETE FROM Comments where idComments = $1', [idComments])
         res.json(comments.ress[0])
     }
