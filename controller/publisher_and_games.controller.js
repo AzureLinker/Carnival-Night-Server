@@ -28,3 +28,5 @@ class Publisher_and_GamesController {
         res.json(publisher_and_games.ress[0])
     }
 }   
+
+module.exports = new Publisher_and_GamesController();
