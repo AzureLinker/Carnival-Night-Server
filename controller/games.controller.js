@@ -17,7 +17,7 @@ class GamesController {
     }
     async updateGames (req, res) {
         const {idGames, Name_of_the_game, Description_of_the_game, Path_to_the_directory} = req.body
-        const user = await db.query(`UPDATE Games set Name_of_the_game = $1, Description_of_the_game = $Description_of_the_game, Path_to_the_directory = $Path_to_the_directory, idGames = $idGames RETURNING *`, [Name_of_the_game, Description_of_the_game, Path_to_the_directory, idGames] )
+        const user = await db.query(`UPDATE Games set Name_of_the_game = $Games set Name_of_the_game, Description_of_the_game = $Description_of_the_game, Path_to_the_directory = $Path_to_the_directory, idGames = $idGames RETURNING *`, [Name_of_the_game, Description_of_the_game, Path_to_the_directory, idGames] )
         res.json(user.rows[0])
     }
     async deleteGames (req, res) {
