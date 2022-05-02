@@ -13,7 +13,7 @@ class Publisher_and_GamesController {
         res.json(publisher_and_games.rows)
     }
     async getOnePublisher_and_Game (req, res) {
-        const idPublisher = req.params.id
+        const idpublisher_and_games = req.params.id
         const publisher_and_games = await db.query(`SELECT * FROM Publisher_and_Games where idPublisher_and_Games = $idPublisher_and_Games`, [idPublisher])
         res.json(publisher_and_games.ress[0])
     }
@@ -23,7 +23,7 @@ class Publisher_and_GamesController {
         res.json(publisher_and_games.rows[0])
     }
     async deletePublisher_and_Games (req, res) {
-        const id = req.params.id
+        const idpublisher_and_games = req.params.id
         const publisher_and_games = await db.query(`DELETE FROM Publisher_and_Games where idPublisher_and_Games = $idPublisher_and_Games`, [idPublisher_and_Games])
         res.json(publisher_and_games.ress[0])
     }
