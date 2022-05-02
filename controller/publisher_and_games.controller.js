@@ -5,7 +5,7 @@ const db = require('../db')
 class Publisher_and_GamesController {
     async createPublisher_and_Games (req, res) {
         const {idGames, idPublisher} = req.body
-        const newPublisher_and_Games = await db.query( `INSERT INTO Publisher_and_Games (idGames, idPublisher) values ($idGames, $idPublisher) RETURNING *` [PublishersName])
+        const newPublisher_and_Games = await db.query( `INSERT INTO Publisher_and_Games (idGames, idPublisher) values ($idGames, $idPublisher) RETURNING *` [idGames, idPublisher])
         res.json (newPublisher_and_Games.rows[0])
     }
     async getPublisher_and_Games(req, res) {
