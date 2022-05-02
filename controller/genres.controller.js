@@ -3,7 +3,7 @@ const db = require('../db')
 class GenresController {
     async createGenres (req, res) {
         const {Name_of_the_genre} = req.body
-        const newGenres = await db.query( `INSERT INTO Genres (Name_of_the_genre) values ($1Name_of_the_genre) RETURNING *` [Name_of_the_genre])
+        const newGenres = await db.query( `INSERT INTO Genres (Name_of_the_genre) values ($Name_of_the_genre) RETURNING *` [Name_of_the_genre])
         res.json (newGenres.rows[0])
     }
     async getGenres(req, res) {
