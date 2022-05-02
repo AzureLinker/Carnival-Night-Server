@@ -1,7 +1,7 @@
 const db = require('../db')
 
 class GamesAndGenresController {
-    async createUser (req, res) {
+    async createGamesAndGenres (req, res) {
         const {idGames, idGenres} = req.body
         const newGamesAndGenres = await db.query( `INSERT INTO GamesAndGenres (idGames, idGenres) values ($idGames, $idGenres) RETURNING *` [idGames, idGenres])
         res.json (newGamesAndGenres.rows[0])
