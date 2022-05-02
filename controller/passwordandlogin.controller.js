@@ -26,3 +26,5 @@ class PasswordAndLoginController {
         res.json(passwordandlogin.ress[0])
     }
 }   
+
+module.exports = new PasswordAndLoginController();
