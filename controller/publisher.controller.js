@@ -26,3 +26,5 @@ class PublisherController {
         res.json(publisher.ress[0])
     }
 }   
+
+module.exports = new PublisherController();
