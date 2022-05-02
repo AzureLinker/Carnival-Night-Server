@@ -26,3 +26,5 @@ class GenresController {
         res.json(genres.ress[0])
     }
 }   
+
+module.exports = new GenresController();
