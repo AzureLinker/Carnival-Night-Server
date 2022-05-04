@@ -3,7 +3,7 @@ const db = require('../db')
 class UserController {
     async createUser (req, res) {
         const {ThePathToTheAvatar, Nikname} = req.body
-        const newPerson = await db.query( `INSERT INTO User (ThePathToTheAvatar,Nikname) values ($ThePathToTheAvatar, $Nikname) RETURNING *` [ThePathToTheAvatar,Nikname])
+        const newPerson = await db.query( `INSERT INTO User (ThePathToTheAvatar,Nikname) values ($ThePathToTheAvatar, $Nikname) RETURNING *`, [ThePathToTheAvatar,Nikname])
         res.json (newPerson.rows[0])
     }
     async getUsers(req, res) {
