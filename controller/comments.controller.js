@@ -3,7 +3,7 @@ const db = require('../db')
 class CommentsController {
     async createComments (req, res) {
         const {Description, Date_the_comment_was_created} = req.body
-        const newComment = await db.query( `INSERT INTO Comments (Description, Date_the_comment_was_created) values ($Description, $Date_the_comment_was_created) RETURNING *` [Description,Date_the_comment_was_created])
+        const newComment = await db.query( `INSERT INTO Comments (Description, Date_the_comment_was_created) values ($Description, $Date_the_comment_was_created) RETURNING *`, [Description,Date_the_comment_was_created])
         res.json (newComment.rows[0])
     }
     async getComments(req, res) {
