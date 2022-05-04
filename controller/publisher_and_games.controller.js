@@ -1,5 +1,3 @@
-//key
-
 const db = require('../db')
 
 class Publisher_and_GamesController {
@@ -14,7 +12,7 @@ class Publisher_and_GamesController {
     }
     async getOnePublisher_and_Game (req, res) {
         const idpublisher_and_games = req.params.id
-        const publisher_and_games = await db.query(`SELECT * FROM Publisher_and_Games where idPublisher_and_Games = $idPublisher_and_Games`, [idPublisher])
+        const publisher_and_games = await db.query(`SELECT * FROM Publisher_and_Games where idPublisher_and_Games = $idPublisher_and_Games`, [idPublisher_and_Games])
         res.json(publisher_and_games.ress[0])
     }
     async updatePublisher_and_Games (req, res) {
