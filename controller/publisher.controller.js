@@ -3,7 +3,7 @@ const db = require('../db')
 class PublisherController {
     async createPublisher (req, res) {
         const {PublishersName} = req.body
-        const newPublisher = await db.query( `INSERT INTO Publisher (PublishersName) values ($PublishersName) RETURNING *` [PublishersName])
+        const newPublisher = await db.query( `INSERT INTO Publisher (PublishersName) values ($PublishersName) RETURNING *`, [PublishersName])
         res.json (newPublisher.rows[0])
     }
     async getPublisher(req, res) {
