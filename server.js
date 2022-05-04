@@ -1,34 +1,23 @@
 const express = require('express');
-const { createRequire } = require('module');
-const path = require('path');
-
+const userRouter = require('./routes/user.routes');
+const commentsRouter = require('./routes/comments.routes');
+const gamesRouter = require('./routes/games.routes');
+const gamesGenersRouter = require('./routes/gamesandgenres.routes');
+const genresRouter = require('./routes/genres.routes');
+const libraryRouter = require('./routes/library.routes');
+const passwordLoginRouter = require('./routes/passwordandlogin.routes');
+const publisherGamesRouter = require('./routes/publisher_and_games.routes');
+const publisherRouter = require('./routes/publisher.routes');
+const PORT = process.env.PORT || 8080;
 const app = express();
-
-const PORT = 3000;
-
-const createPath = (page) => path.resolve(__dirname, 'files', `${page}.html`);
-
-app.listen(PORT, (error) => {
-    error ? console.log(error) : console.log(`listening port ${PORT}`);
-});
-
-app.use ((req, res, next) => {
-    console.log(`path: ${req.path}`);
-    console.log(`method: ${req.method}`);
-    next();
-});
-
-app.get('/', (req, res) => {
-    res.sendFile(createPath('index'));
-});
-app.get('/contacts', (req, res) => {
-    res.sendFile(createPath('contacts'));
-});
-app.get('/about-us', (req, res) => {
-    res.redirect('/contacts');
-});
-app.use((req, res) => {
-    res
-        .status(404)
-        .sendFile(createPath('error'));
-});
+app.use(express.json());
+app.use('/api', userRouter);
+app.use('/api', commentsRouter);
+app.use('/api', gamesRouter);
+app.use('/api', gamesGenersRouter);
+app.use('/api', genresRouter);
+app.use('/api', libraryRouter);
+app.use('/api', passwordLoginRouter);
+app.use('/api', publisherGamesRouter);
+app.use('/api', publisherRouter);
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
