@@ -1,7 +1,7 @@
 
 
 create TABLE PasswordAndLogin (
-  idPasswordAndLogin INT SERIAL PRIMARY KEY NOT NULL,
+  idPasswordAndLogin SERIAL PRIMARY KEY NOT NULL,
   Login VARCHAR(256) NOT NULL,
   Password VARCHAR(15) NOT NULL,
   ConfirmationСode VARCHAR(10) NOT NULL,
@@ -10,7 +10,7 @@ create TABLE PasswordAndLogin (
  
 
 create TABLE User (
-  idUser INT SERIAL PRIMARY KEY NOT NULL,
+  idUser SERIAL PRIMARY KEY NOT NULL,
   ThePathToTheAvatar VARCHAR(45) NOT NULL,
   Nickname VARCHAR(15) NOT NULL,
   --INDEX `fk_User_PasswordAndLogin_idx` (`PasswordAndLogin(FK)` ASC) VISIBLE,
@@ -21,7 +21,7 @@ create TABLE User (
   --ON UPDATE NO ACTION
 
 create TABLE Comments (
-  idComments INT SERIAL PRIMARY KEY NOT NULL,
+  idComments SERIAL PRIMARY KEY NOT NULL,
   idUser INTEGER,
   Description VARCHAR(500) NOT NULL,
   Date_the_comment_was_created VARCHAR(45) NULL,
@@ -33,7 +33,7 @@ create TABLE Comments (
 
 
 create TABLE Games (
-  idGames INT SERIAL PRIMARY KEY NOT NULL,
+  idGames SERIAL PRIMARY KEY NOT NULL,
   idComments INTEGER,
   Name_of_the_game VARCHAR(45) NOT NULL,
   Description_of_the_game VARCHAR(1000) NOT NULL,
@@ -46,12 +46,12 @@ create TABLE Games (
 
 
 create TABLE Genres (
-  idGenres INT SERIAL PRIMARY KEY NOT NULL,
+  idGenres SERIAL PRIMARY KEY NOT NULL,
   Name_of_the_genre VARCHAR(50) NOT NULL)
 
 
 create TABLE Library (
-  idlibrary INT SERIAL PRIMARY KEY NOT NULL,
+  idlibrary SERIAL PRIMARY KEY NOT NULL,
   idGames INTEGER,
   idUser INT NOT NULL,
   --INDEX `fk_library_Games1_idx` (`idGames(FK)` ASC) VISIBLE,
@@ -67,7 +67,7 @@ create TABLE Library (
 
 
 create TABLE GamesAndGenres (
-  idGamesAndGenres INT SERIAL PRIMARY KEY NOT NULL,
+  idGamesAndGenres SERIAL PRIMARY KEY NOT NULL,
   idGames INTEGER NOT NULL,
   idGenres INTEGER NOT NULL,
   --INDEX `fk_GamesAndGenres_Games1_idx` (`idGames(FK)` ASC) VISIBLE,
@@ -83,12 +83,12 @@ create TABLE GamesAndGenres (
 
 
 CREATE TABLE Publisher (
-  idPublisher INT SERIAL PRIMARY KEY NOT NULL,
+  idPublisher SERIAL PRIMARY KEY NOT NULL,
   PublishersName VARCHAR(100) NOT NULL)
 
 
 CREATE TABLE Publisher_And_Games (
-  idPublisherAndGames INT SERIAL PRIMARY KEY NOT NULL,
+  idPublisherAndGames SERIAL PRIMARY KEY NOT NULL,
   idGames INTEGER NOT NULL,
   idPublisher INTEGER NOT NULL,
   --INDEX `fk_Publisher_and_Games_Publisher1_idx` (`idPublisher(FK)` ASC) VISIBLE,
