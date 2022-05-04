@@ -16,7 +16,7 @@ class Publisher_and_GamesController {
         res.json(publisher_and_games.ress[0])
     }
     async updatePublisher_and_Games (req, res) {
-        const {idPublisher, PublishersName} = req.body
+        const {idGames, idPublisher} = req.body
         const publisher_and_games = await db.query(`UPDATE Publisher_and_Games set idGames = $idGames, idPublisher = $idPublisher where idPublisher_and_Games = $idPublisher_and_Games RETURNING *`, [idGames, idPublisher, idPublisher_and_Games] )
         res.json(publisher_and_games.rows[0])
     }
