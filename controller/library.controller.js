@@ -3,7 +3,7 @@ const db = require('../db')
 class libraryController {
     async createlibrary (req, res) {
         const {idGames, idUser} = req.body
-        const newlibrary = await db.query( `INSERT INTO library (idGames, idUser) values ($idGames, $idUser) RETURNING *` [idGames, idUser])
+        const newlibrary = await db.query( `INSERT INTO library (idGames, idUser) values ($idGames, $idUser) RETURNING *`, [idGames, idUser])
         res.json (newlibrary.rows[0])
     }
     async getlibrarys(req, res) {
