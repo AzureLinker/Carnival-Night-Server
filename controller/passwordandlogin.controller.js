@@ -3,7 +3,7 @@ const db = require('../db')
 class PasswordAndLoginController {
     async createPasswordAndLogin (req, res) {
         const {Login, Password, ConfirmationСode, DateOfConfirmation, DateOfPasswordChange} = req.body
-        const newPasswordAndLogin = await db.query( `INSERT INTO PasswordAndLogin (Login, Password, ConfirmationСode, DateOfConfirmation, DateOfPasswordChange) values ($Login, $Password, $ConfirmationСode, $DateOfConfirmation, $DateOfPasswordChange) RETURNING *` [Login, Password, ConfirmationСode, DateOfConfirmation, DateOfPasswordChange])
+        const newPasswordAndLogin = await db.query( `INSERT INTO PasswordAndLogin (Login, Password, ConfirmationСode, DateOfConfirmation, DateOfPasswordChange) values ($Login, $Password, $ConfirmationСode, $DateOfConfirmation, $DateOfPasswordChange) RETURNING *`, [Login, Password, ConfirmationСode, DateOfConfirmation, DateOfPasswordChange])
         res.json (newPasswordAndLogin.rows[0])
     }
     async getPasswordAndLogins(req, res) {
