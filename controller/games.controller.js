@@ -3,7 +3,7 @@ const db = require('../db')
 class GamesController {
     async createGames (req, res) {
         const {Name_of_the_game, Description_of_the_game, Path_to_the_directory} = req.body
-        const newGames = await db.query( `INSERT INTO Games (Name_of_the_game, Description_of_the_game, Path_to_the_directory) values ($Name_of_the_game, $Description_of_the_game, $Path_to_the_directory) RETURNING *` [Name_of_the_game, Description_of_the_game, Path_to_the_directory])
+        const newGames = await db.query( `INSERT INTO Games (Name_of_the_game, Description_of_the_game, Path_to_the_directory) values ($Name_of_the_game, $Description_of_the_game, $Path_to_the_directory) RETURNING *`, [Name_of_the_game, Description_of_the_game, Path_to_the_directory])
         res.json (newGames.rows[0])
     }
     async getGames(req, res) {
